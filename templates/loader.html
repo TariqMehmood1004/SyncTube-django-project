@@ -1,0 +1,19 @@
+<section id="loader" class="absolute top-0 left-0 z-10 w-full h-screen bg-[var(--primary-color)] overflow-hidden p-10">
+    <main class="w-full h-full rounded-3xl overflow-hidden flex items-center justify-center bg-[var(--yellow-color)]">
+        <span class="absolute top-0 right-0 w-96 h-24 bg-[var(--primary-color)] rounded-full"></span>
+        <div class="relative w-96 h-52 rotate-[30deg] rounded flex items-center justify-center gap-2">
+            <span class="w-12 h-32 bg-[var(--primary-color)] rounded-full animate-bounce"></span>
+            <span class="w-12 h-52 bg-[var(--primary-color)] rounded-full animate-bounce"></span>
+            <span class="w-12 h-32 bg-[var(--primary-color)] rounded-full animate-bounce"></span>
+        </div>
+    </main>
+</section>
+
+<script>
+    // after 3 seconds, remove loader
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.getElementById('loader').remove()
+        }, 3000)
+    })
+</script>

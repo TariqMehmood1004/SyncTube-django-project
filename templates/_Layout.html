@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --primary-color: #02050C;
+            --secondary-color: #1B0015;
+            --white-color: #FFFFFF;
+            --grey-color: #D9D9D9;
+            --hover-color: #221C1C;
+            --yellow-color: #FFAF00;
+            --light-color: #221C1C;
+            --clip-path: clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 11% 47%);
+        }
+        .video-card:hover > .thumb .thumbnail {
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body class="relative bg-[var(--primary-color)] w-full h-screen overflow-x-hidden">
+
+<!--    {% include "loader.html" %}-->
+
+    {% block content %}{% endblock content %}
+
+    {% block script %}{% endblock script %}
+</body>
+</html>

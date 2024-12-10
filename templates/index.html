@@ -1,0 +1,370 @@
+
+{% extends "_layout.html" %}
+{% load static %}
+
+{% block title %} SyncTube {% endblock title %}
+
+{% block content %}
+<section class="w-full h-full flex">
+    <aside id="sidebar" class="w-[20rem] transition-all duration-300 h-screen bg-[var(--secondary-color)] flex flex-col items-center gap-2">
+
+        <div class="p-5 w-full mt-4 flex items-center justify-start gap-4">
+            <button id="menu" class="w-12 h-12 bg-[var(--hover-color)] hover:bg-slate-900 rounded-lg flex items-center justify-center transition-all duration-300">
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </div>
+            </button>
+            <div id="list">
+                <img src="{% static "logo.png" %}" alt="SyncTube" class="w-full h-10 object-contain pointer-events-none">
+            </div>
+        </div>
+
+        <ul class="p-5 w-full rounded-lg flex flex-col items-start justify-start gap-2">
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">Home</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">Shorts</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">Subscriptions</span>
+                    </div>
+                </a>
+            </li>
+
+            <hr class="w-full border-slate-500/30 my-4">
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">You</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">History</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">Playlist</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0 1 18 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0 1 18 7.125v-1.5m1.125 2.625c-.621 0-1.125.504-1.125 1.125v1.5m2.625-2.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125M18 5.625v5.25M7.125 12h9.75m-9.75 0A1.125 1.125 0 0 1 6 10.875M7.125 12C6.504 12 6 12.504 6 13.125m0-2.25C6 11.496 5.496 12 4.875 12M18 10.875c0 .621-.504 1.125-1.125 1.125M18 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m-12 5.25v-5.25m0 5.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125m-12 0v-1.5c0-.621-.504-1.125-1.125-1.125M18 18.375v-5.25m0 5.25v-1.5c0-.621.504-1.125 1.125-1.125M18 13.125v1.5c0 .621.504 1.125 1.125 1.125M18 13.125c0-.621.504-1.125 1.125-1.125M6 13.125v1.5c0 .621-.504 1.125-1.125 1.125M6 13.125C6 12.504 5.496 12 4.875 12m-1.5 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M19.125 12h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h1.5m14.25 0h1.5" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">Your Videos</span>
+                    </div>
+                </a>
+            </li>
+
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">Watch Later</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">Liked Videos</span>
+                    </div>
+                </a>
+            </li>
+
+            <hr class="w-full border-slate-500/30 my-4">
+
+            <div class="text-white text-lg w-full h-7">
+                <span id="list">Subscriptions</span>
+            </div>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <img src="https://yt3.googleusercontent.com/Bo0L80TmCus5HIKPaHQz1Z1AerDdPswFWC8Z95haovtn-OeEUXioQ9H9Rkbg4JYm009lk2_Yvw=s900-c-k-c0x00ffffff-no-rj" alt="ARY Digital" class="h-8 object-cover">
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">ARY Digital HD</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="w-full mb-1 h-12 flex items-center justify-start gap-4">
+                <a href="#" class="w-full h-full p-1 hover:bg-[var(--hover-color)] transition-all duration-300 rounded-lg flex items-center gap-4">
+                    <div id="menu" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300">
+                        <div class="rounded-lg flex items-center justify-center">
+                            <img src="https://yt3.googleusercontent.com/Bo0L80TmCus5HIKPaHQz1Z1AerDdPswFWC8Z95haovtn-OeEUXioQ9H9Rkbg4JYm009lk2_Yvw=s900-c-k-c0x00ffffff-no-rj" alt="ARY Digital" class="h-8 object-cover">
+                        </div>
+                    </div>
+                    <div id="list">
+                        <span class="text-white text-lg">ARY Digital HD</span>
+                    </div>
+                </a>
+            </li>
+
+            <hr class="w-full border-slate-500/30 my-4">
+
+        </ul>
+    </aside>
+
+    <main class="w-full h-screen overflow-y-scroll">
+        <header class="ml-2 w-full flex flex-col gap-2">
+            <div class="w-full h-24 flex items-center justify-center gap-4 px-8">
+                <div class="w-full h-full flex items-center justify-center gap-4">
+                    <div class="w-1/2 h-16 rounded-full flex gap-2 items-center justify-center">
+                        <div class="w-full h-full rounded-full border border-slate-200 flex items-center justify-center">
+                            <input type="text" class="w-full h-full rounded-full bg-transparent outline-none px-4 text-white" placeholder="Search">
+                            <button id="menu" class="w-16 px-3 h-full bg-[var(--white-color)] rounded-full flex items-center justify-center transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                    </svg>
+                            </button>
+                        </div>
+
+                        <button id="menu" class="w-12 h-12 bg-[var(--hover-color)] rounded-full flex items-center justify-center transition-all duration-300">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-[20%] flex items-center justify-end gap-4 pr-12">
+
+                    <button class="btn btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                        </svg>
+                    </button>
+
+                    <button class="btn btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                        </svg>
+                    </button>
+
+                    <div class="avatar">
+                        <div class="ring-offset-base-100 w-12 rounded-full ring ring-offset-2">
+                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-4 w-full h-16 flex items-center gap-4">
+                <ul class="w-full h-full flex items-center gap-2">
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--hover-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">All</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Music</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Turkish television dramas</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Music</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Turkish television dramas</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Music</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Turkish television dramas</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Music</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Turkish television dramas</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Music</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Turkish television dramas</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Music</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg bg-[var(--secondary-color)] hover:bg-gray-800 transition-all duration-300 p-4 px-5 rounded-lg">Turkish television dramas</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="ml-4 w-full flex flex-col items-center justify-center pt-8 px-2">
+            <div class="videos-card w-full h-full flex flex-wrap gap-4 mb-4">
+                {% for _ in "123456789" %}
+                    <a href="#" class="video-card w-96 h-[330px] transition-all duration-300 hover:bg-[#221C1C] rounded-lg text-lg overflow-hidden">
+                        <div class="relative thumb">
+                            <img src="{% static "p1.jpg" %}"
+                             alt="ARY Digital" class="w-full h-48 object-cover rounded-lg thumbnail transition-all duration-300">
+                            <div class="absolute hover:bg-[#222C2C] transition-all duration-300 top-2 right-2 w-10 h-10 rounded-full bg-[#221C1C] flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="p-4 text-[var(--grey-color)] flex items-start gap-4">
+                            <img src="https://img.freepik.com/free-photo/handsome-man-actor-posing-studio-with-weapon_1303-26965.jpg?t=st=1732960368~exp=1732963968~hmac=8a6c1457838757a4fc083e7b81b0ae582b108fa25196a0d0b1fcd296d794a323&w=2000"
+                                 alt="ARY Digital" class="w-12 h-12 object-cover rounded-full ring ring-[#221C1C]">
+                            <div>
+                                <h2 class="font-medium text-md line-clamp-2">
+                                    Shubh Nonstop Punjabi Mashup 2024 | Ft. Sonam Bajwa | Sidhu Moose wala | ARY Digital | Tariq Mehmood
+                                </h2>
+                                <div class="flex flex-col mt-2">
+                                    <p class="text-sm">Shubh Music</p>
+                                    <div class="flex items-center gap-1">
+                                        <p class="text-sm">2.7M views</p>
+                                        <p class="text-sm">•</p>
+                                        <p class="text-sm">1 day ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+
+            <div class="shorts-card w-full h-full flex flex-wrap gap-4 my-10">
+                {% for _ in "123456789" %}
+                    <a href="#" class="video-card w-96 h-[640px] transition-all duration-300 hover:bg-[#221C1C] rounded-lg text-lg overflow-hidden">
+                        <div class="relative thumb w-full h-[500px] object-cover">
+                            <img src="{% static "p2.jpg" %}"
+                             alt="ARY Digital" class="w-full h-full object-cover rounded-lg thumbnail transition-all duration-300">
+                        </div>
+
+                        <div class="p-4 text-[var(--grey-color)]">
+                            <h2 class="font-medium text-md line-clamp-2">
+                                    Shubh Nonstop Punjabi Mashup 2024 | Ft. Sonam Bajwa | Sidhu Moose wala | ARY Digital | Tariq Mehmood
+                                </h2>
+                                <div class="flex flex-col mt-2">
+                                    <p class="text-sm">Shubh Music</p>
+                                    <div class="flex items-center gap-1">
+                                        <p class="text-sm">2.7M views</p>
+                                        <p class="text-sm">•</p>
+                                        <p class="text-sm">1 day ago</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</section>
+{% endblock content %}
+
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        document.getElementById('menu').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('w-[6rem]');
+
+            document.querySelectorAll('#list').forEach(element => {
+                element.classList.toggle('hidden');
+            });
+            
+        })
+    })
+</script>
+{% endblock script %}
